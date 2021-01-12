@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: deblockt/cucumber-report-annotations-action@v1.7
-          with:
-            access-token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
       - run: npm test
         # env:
         #   # use mongodb for the host here because we have specified a container for the job.
