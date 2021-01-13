@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - run: npm ci
-      - run: npm start
+      - run: PORT=${{ secrets.GITHUB_TOKEN }} npm start
       - run: npm run cy:run
       - name: Cypress run
         uses: cypress-io/github-action@v2
