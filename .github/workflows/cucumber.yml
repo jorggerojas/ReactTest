@@ -18,6 +18,7 @@ jobs:
       - uses: deblockt/cucumber-report-annotations-action@v1.7
         with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci
       - run: npm test
         # env:
         #   # use mongodb for the host here because we have specified a container for the job.
