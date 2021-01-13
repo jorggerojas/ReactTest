@@ -12,16 +12,16 @@ jobs:
     steps:
       - name: RTL
         uses: actions/checkout@v1
-        run: npm ci
-        run: npm run jest
+      - run: npm ci
+      - run: npm run jest
   cypress:
     runs-on: ubuntu-16.04
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-        run: npm ci
-        run: npm start
-        run: npm run cy:run
+      - run: npm ci
+      - run: npm start
+      - run: npm run cy:run
       - name: Cypress run
         uses: cypress-io/github-action@v2
