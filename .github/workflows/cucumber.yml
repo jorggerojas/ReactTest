@@ -1,0 +1,27 @@
+name: Cucumber Service
+
+on:
+  push:
+    branches:
+      - develop
+
+defaults:
+  run:
+    working-directory: ./
+
+jobs:
+  cucumber-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: deblockt/cucumber-report-annotations-action@v1.7
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci
+      - run: npm test
+        # env:
+        #   # use mongodb for the host here because we have specified a container for the job.
+        #   # If we were running the job on the VM this would be localhost
+        #   MONGODB_HOST: mongodb
+        #   MONGODB_PORT: ${{ job.services.mongodb.ports[27017] }}
