@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-cli serve --mode development",
-    "test": "cucumber-js ./src/tests/features/**/*.feature"
+    "build": "webpack --mode production",
+    "test": "cucumber-js ./src/tests/features/**/*.feature",
+    "jest": "jest",
+    "jest:coverage": "jest --coverage",
+    "cy:run": "cypress run"
   },
   "keywords": [],
   "dependencies": {
@@ -19,8 +23,12 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@cucumber/cucumber": "^7.0.0",
+    "@testing-library/react": "^11.2.3",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
+    "cypress": "^6.2.1",
+    "cypress-react-unit-test": "^4.17.2",
+    "jest": "^26.6.3",
     "style-loader": "^2.0.0",
     "webpack": "^5.13.0",
     "webpack-cli": "^4.3.1",
