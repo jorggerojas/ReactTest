@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 const App = () => {
-  console.log(1 + 1)
+  const [click, setClick] = useState(false);
   return (
     <div>
-      <h1> Hello, World! </h1>
+      <h1 className="greetings"> Hello, World! </h1>
+      <a href="#" onClick={() => setClick(!click)}>Link</a>
+      <p>{click ? "Clicked!" : null}</p>
     </div>
   );
 };
